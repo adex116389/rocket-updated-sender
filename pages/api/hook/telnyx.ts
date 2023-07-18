@@ -5,6 +5,8 @@ import { ExtendedRequest } from "../../../types/ExtendedRequest";
 const router = createRouter<ExtendedRequest, NextApiResponseServerIO>();
 
 router.post(async (req, res) => {
+  console.log(`payload: `, req.body.data.payload);
+  console.log(`data: `, req.body.data);
   const status = req.body.data.payload.to[0].status;
   const number = req.body.data.payload.to[0].phone_number;
 
